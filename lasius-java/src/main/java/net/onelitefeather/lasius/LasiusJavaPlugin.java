@@ -14,7 +14,6 @@ import org.gradle.testing.jacoco.tasks.JacocoReport;
 import org.jetbrains.annotations.NotNull;
 
 import java.nio.charset.StandardCharsets;
-import java.util.Objects;
 
 public class LasiusJavaPlugin implements Plugin<@NotNull Project> {
 
