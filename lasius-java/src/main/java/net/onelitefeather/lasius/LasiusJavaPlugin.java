@@ -17,11 +17,8 @@ import java.nio.charset.StandardCharsets;
 
 public class LasiusJavaPlugin implements Plugin<@NotNull Project> {
 
-    private int javaVersion;
-
     @Override
     public void apply(@NotNull Project project) {
-        this.javaVersion = JavaVersionResolver.resolveJavaVersion(project);
         applyPlugins(project);
         configureJava(project);
         configureTasks(project);
@@ -37,11 +34,11 @@ public class LasiusJavaPlugin implements Plugin<@NotNull Project> {
     private void configureJava(@NotNull Project project) {
         project.getPluginManager().withPlugin("java", java -> {
             var javaExt = project.getExtensions().getByType(JavaPluginExtension.class);
-            javaExt.getToolchain().getLanguageVersion().set(JavaLanguageVersion.of(javaVersion));
+            javaExt.getToolchain().getLanguageVersion().set(JavaLanguageVersion.of(25));
             javaExt.withJavadocJar();
             javaExt.withSourcesJar();
 
-            project.getLogger().lifecycle("Set Java toolchain to Java {} for project {}", javaVersion, project.getName());
+            project.getLogger().lifecycle("Set Java toolchain to Java {} for project {}", 25, project.getName());
         });
     }
 
@@ -52,7 +49,7 @@ public class LasiusJavaPlugin implements Plugin<@NotNull Project> {
     private void configureTasks(@NotNull Project project) {
         project.getTasks().withType(JavaCompile.class).configureEach(compileTask -> {
             compileTask.getOptions().setEncoding(StandardCharsets.UTF_8.displayName());
-            compileTask.getOptions().getRelease().set(javaVersion);
+            compileTask.getOptions().getRelease().set(25);
         });
 
         project.getTasks().withType(Test.class).configureEach(testTask -> {
