@@ -19,3 +19,4 @@ dependencyResolutionManagement {
 
 include("lasius-java")
 include("lasius-kotlin")
+include("lasius-base")
