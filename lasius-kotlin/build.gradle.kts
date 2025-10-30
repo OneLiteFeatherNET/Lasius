@@ -3,6 +3,7 @@ plugins {
 }
 
 dependencies {
+    implementation(project(":lasius-base"))
     // Needed because your plugin applies and configures the Kotlin plugin
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin")
     testImplementation(platform(libs.junit.bom))
