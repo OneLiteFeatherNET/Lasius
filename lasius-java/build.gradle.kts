@@ -5,6 +5,7 @@ plugins {
 version = "1.0-SNAPSHOT"
 
 dependencies {
+    implementation(project(":lasius-base"))
     testImplementation(platform(libs.junit.bom))
     testImplementation(libs.junit.jupiter)
     testRuntimeOnly(libs.junit.launcher)

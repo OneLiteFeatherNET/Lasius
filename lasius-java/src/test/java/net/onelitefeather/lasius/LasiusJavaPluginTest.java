@@ -17,6 +17,7 @@ class LasiusJavaPluginTest {
     @BeforeEach
     void setUp() {
         this.project = ProjectBuilder.builder().build();
+        project.getPluginManager().apply("java-library");
     }
 
     @Test

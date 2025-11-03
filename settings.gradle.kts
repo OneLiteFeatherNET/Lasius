@@ -3,6 +3,7 @@ rootProject.name = "lasius"
 dependencyResolutionManagement {
     repositories {
         mavenCentral()
+        gradlePluginPortal()
     }
 
     versionCatalogs {
@@ -17,3 +18,5 @@ dependencyResolutionManagement {
 }
 
 include("lasius-java")
+include("lasius-kotlin")
+include("lasius-base")
