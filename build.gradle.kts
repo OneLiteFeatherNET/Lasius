@@ -1,6 +1,6 @@
 subprojects {
     apply(plugin = "maven-publish")
-
+    apply(plugin = "java-library")
     group = "net.onelitefeather"
 
     plugins.withType<JavaPlugin> {
