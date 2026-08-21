@@ -6,7 +6,14 @@
   "packages": {
     ".": {
       "package-name": "Lasius",
-      "changelog-path": "CHANGELOG.md"
+      "changelog-path": "CHANGELOG.md",
+      "extra-files": [
+        {
+          "type": "generic",
+          "path": "build.gradle.kts"
+        }
+      ]
     }
-  }
+  },
+  "bootstrap-sha": "149985f8c653c40127a9b4971a8f60fedea671d3"
 }

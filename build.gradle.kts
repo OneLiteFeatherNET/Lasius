@@ -1,3 +1,5 @@
+
+version = "0.0.0" // x-release-please-version
 subprojects {
     apply(plugin = "maven-publish")
     apply(plugin = "java-library")
